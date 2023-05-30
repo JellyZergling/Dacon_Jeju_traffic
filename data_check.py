@@ -50,7 +50,7 @@ for i in change_float32:
 
 print(df_train.info())
 
-non_show = ['base_date', 'base_hour']
+non_show = ['base_date', 'base_hour', 'vehicle_restricted', 'height_restricted']
 for i in df_train:
     if df_train[i].dtype == 'object':
         non_show.append(i)
@@ -58,5 +58,3 @@ for i in df_train:
 plt.figure(figsize=(15, 8))
 sns.heatmap(df_train.drop(non_show, axis=1).corr(), annot=True)
 plt.show()
-
-# sns.histplot(df_train['maximum_speed_limit'])
